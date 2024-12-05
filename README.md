@@ -26,10 +26,10 @@ sudo ufw status
 
 COMMANDS NEEDED TO BUILD, TAG AND PUSH DOCKER IMAGE TO DOCKER REGISTRY
 docker login -u <username>
-sudo docker build -t username/imagesName:tag .
-sudo docker tag username/imagesName:tag username/imagesName:tag 
+sudo docker build -t imagesName:tag .
+sudo docker tag imagesName:tag username/imagesName:tag 
 sudo docker push username/imagesName:tag 
 
   COMMANDS NEEDED TO EXPOSE DOCKER TO THE INTERNET
-  docker run -d -p <hostport>:<containerport> username/imagesName:tag
-  example:   docker run -d -p  8080:90 --name=nice-apache obianuju/nickosapp:v1.0.0 or :latest
+  docker run -d -p <hostport>:<containerport> --name=<containerName> <imagesName:tag>
+  example:   docker run -d -p  8080:90 --name=nice-apache2 nickosapp:v1.0.0 or :latest
